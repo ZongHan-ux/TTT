@@ -1,4 +1,6 @@
 # Tic Tac Toe
+# Credits: Sourabh Somani, Tic-Tac-Toe Game In Python
+# URL: https://www.c-sharpcorner.com/UploadFile/75a48f/tic-tac-toe-game-in-python/
 import os
 import time
 
