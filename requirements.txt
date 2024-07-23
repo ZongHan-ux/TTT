@@ -1,2 +1,2 @@
 python==3.11.9
-pygame==2.6.0
+visual code studio
