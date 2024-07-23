@@ -26,3 +26,7 @@ The game is done by this youtube creator (https://www.youtube.com/watch?v=nbRpDX
 ![preview](/game-tie.png)
 
 -Click restart when the game ended
+
+# Credits
+- Code: https://www.youtube.com/watch?v=nbRpDXV7QDM
+- Song: 
