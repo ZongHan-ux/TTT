@@ -9,6 +9,6 @@ Its a game where 2 players try to match their symbols in order of 3 consecutive 
 The game is done by this youtube creator (https://www.youtube.com/watch?v=nbRpDXV7QDM) and some parts of the code edited by Ethan
 
 # Installing the game
-> First download visual code studio if you have not done so
-> Second download the python file /Tic-Tac-Toe.py
-> Third upload the file on visual code studio to run it
+- First download visual code studio if you have not done so
+- Second download the python file /Tic-Tac-Toe.py
+- Third upload the file on visual code studio to run it
