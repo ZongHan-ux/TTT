@@ -18,9 +18,11 @@ The game is done by this youtube creator (https://www.youtube.com/watch?v=nbRpDX
 - Once the first player have clicked the next player will have to click the next area
 - After the second player have clicked the area the first player will have to strategise on how to win the game
 - Once there is a diagonal/horizontal/diagonal/anti-diagonal of 3 X or O the respective player wins
+
 ![preview](/game-end.png)
 
 - Or if there is a tie no one wins
+
 ![preview](/game-tie.png)
 
 -Click restart when the game ended
