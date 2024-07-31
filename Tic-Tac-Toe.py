@@ -1,5 +1,97 @@
 import tkinter #tk-interface (graphical user interface library)
+from playsound import playsound
+from threading import Thread
 
+import tkinter as tk
+import time
+
+
+
+
+def main():
+    # Create the splash screen
+    splash_root = tk.Tk()
+    splash_root.title("Introduction")
+    splash_root.geometry("550x150")
+
+    # Add a label or image to the splash screen
+    splash_label = tk.Label(splash_root, text="Welcome to the Tic-Tac-Toe Game!\n\n"
+                            "Instructions:\n\n"
+                            "1. Each player takes a turn clicking the box each as X or O\n"
+                            "2. The first player to make their X or O in a straight line with 3 letters regardless of position wins\n"
+                            "3. Click the X in the top right side to start the game\n"
+                            "4. Click restart to restart the game!\n"
+                            "5. Good Luck Players!")
+    splash_label.pack()
+
+    
+
+    splash_root.mainloop()
+
+if __name__ == "__main__":
+    main()
+
+
+def play_click_sound():
+    playsound(r"C:\Users\ongzo\Downloads\game-sound.mp3")  # Replace with your sound file path
+
+def set_tile(row, column):
+    global curr_player, game_over, board
+
+    if game_over:
+        return
+
+    if board[row][column]["text"] != "":
+        # Already taken spot
+        return
+
+    board[row][column]["text"] = curr_player  # Mark the board
+    play_click_sound()  # Play the click sound
+
+    # Switch player and check winner
+    curr_player = playerO if curr_player == playerX else playerX
+    label["text"] = curr_player + "'s turn"
+    check_winner()
+
+
+def set_tile(row, column):
+  global curr_player
+
+  if (game_over):
+    return
+
+  if board[row][column]["text"] != "":
+    # already taken spot
+    return
+
+  board[row][column]["text"] = curr_player  # mark the board
+
+  # Play the click sound directly in set_tile
+  play_click_sound()
+
+def set_tile(row, column):
+    global curr_player
+
+    if (game_over):
+        return
+
+    if board[row][column]["text"] != "":
+        # already taken spot
+        return
+
+    board[row][column]["text"] = curr_player  # mark the board
+
+    # Play the click sound
+    play_click_sound()
+# play sound from file path
+def play_music_loop():
+  while True:
+    playsound(r"C:\Users\ongzo\Downloads\Fluffing-a-Duck(chosic.com).mp3")
+
+# Create a thread for music
+music_thread = Thread(target=play_music_loop)
+music_thread.daemon = True  # Ensure thread terminates when main program ends
+music_thread.start()
 def set_tile(row, column):
     global curr_player
 
@@ -135,5 +227,11 @@ window_y = int((screen_height/2) - (window_height/2))
 
 #format "(w)x(h)+(x)+(y)"
 window.geometry(f"{window_width}x{window_height}+{window_x}+{window_y}")
+# Create a thread to play music
+music_thread = Thread(target=play_music_loop)
 
+# Start the thread
+music_thread = Thread(target=play_music_loop)
+music_thread.daemon = True  # Ensure thread terminates when main program ends
+music_thread.start()
 window.mainloop()
