@@ -29,14 +29,14 @@ if __name__ == "__main__":
 
 def play_click_sound():
     try:
-        playsound(r"C:\Users\ongzo\Downloads\game-sound.mp3")
+        playsound("TTT-main/game-sound.mp3")
     except Exception as e:
         print(f"Error playing sound: {e}")
     
 # play sound from file path
 def play_music_loop():
   while True:
-    playsound(r"C:\Users\ongzo\Downloads\Fluffing-a-Duck(chosic.com).mp3")
+    playsound("TTT-main/background.mp3")
 
 # Create a thread for music
 music_thread = Thread(target=play_music_loop)
