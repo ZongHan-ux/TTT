@@ -6,8 +6,6 @@ import tkinter as tk
 import time
 
 
-
-
 def main():
     # Create the splash screen
     splash_root = tk.Tk()
@@ -23,9 +21,6 @@ def main():
                             "4. Click restart to restart the game!\n"
                             "5. Good Luck Players!")
     splash_label.pack()
-
-    
-
     splash_root.mainloop()
 
 if __name__ == "__main__":
@@ -33,56 +28,11 @@ if __name__ == "__main__":
 
 
 def play_click_sound():
-    playsound(r"C:\Users\ongzo\Downloads\game-sound.mp3")  # Replace with your sound file path
-
-def set_tile(row, column):
-    global curr_player, game_over, board
-
-    if game_over:
-        return
-
-    if board[row][column]["text"] != "":
-        # Already taken spot
-        return
-
-    board[row][column]["text"] = curr_player  # Mark the board
-    play_click_sound()  # Play the click sound
-
-    # Switch player and check winner
-    curr_player = playerO if curr_player == playerX else playerX
-    label["text"] = curr_player + "'s turn"
-    check_winner()
-
-
-def set_tile(row, column):
-  global curr_player
-
-  if (game_over):
-    return
-
-  if board[row][column]["text"] != "":
-    # already taken spot
-    return
-
-  board[row][column]["text"] = curr_player  # mark the board
-
-  # Play the click sound directly in set_tile
-  play_click_sound()
-
-def set_tile(row, column):
-    global curr_player
-
-    if (game_over):
-        return
-
-    if board[row][column]["text"] != "":
-        # already taken spot
-        return
-
-    board[row][column]["text"] = curr_player  # mark the board
-
-    # Play the click sound
-    play_click_sound()
+    try:
+        playsound(r"C:\Users\ongzo\Downloads\game-sound.mp3")
+    except Exception as e:
+        print(f"Error playing sound: {e}")
+    
 # play sound from file path
 def play_music_loop():
   while True:
@@ -92,8 +42,11 @@ def play_music_loop():
 music_thread = Thread(target=play_music_loop)
 music_thread.daemon = True  # Ensure thread terminates when main program ends
 music_thread.start()
+
 def set_tile(row, column):
     global curr_player
+    play_click_sound()  # Call the sound function after marking the board
+      # Add a small delay to prevent rapid sound overlap
 
     if (game_over):
         return
