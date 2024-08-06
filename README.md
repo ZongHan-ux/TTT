@@ -25,7 +25,7 @@ The game is done by this youtube creator (https://www.youtube.com/watch?v=nbRpDX
 
 ![preview](/game-tie.png)
 
--Click restart when the game ended
+-Click restart when the game ended or click E to exit the game
 
 # Credits
 - Code: https://www.youtube.com/watch?v=nbRpDXV7QDM
